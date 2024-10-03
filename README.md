@@ -1,5 +1,15 @@
 # Moringa phase 4 project
 # Twitter Sentiment Analysis
+## Summary 
+
+In this project, we analyzed customer feedback on products using tweets sourced from a social media dataset. The dataset contains over 9,000 tweets about products such as iPhones and Google products, with labeled sentiments (positive, negative, or neutral). The goal was to build a sentiment classifier to understand public opinion better. Since sentiment analysis of unstructured text is essential for businesses to maintain brand reputation, Twitter provided an excellent source of rich, user-generated content for this task.
+
+For data preparation, we first cleaned the tweet text by removing mentions, URLs, hashtags, emojis, special characters, and extra whitespaces. We also tokenized the text, removed stopwords using NLTK, and applied lemmatization to standardize word forms. This cleaned text was then stored in a `cleaned_text` column, which was used for feature extraction. We used `TfidfVectorizer` to transform the text into numerical vectors, selecting the top 5,000 features while removing common English stopwords.
+
+In the modeling phase, we employed multiple classifiers, including Logistic Regression, Random Forest, and Neural Networks, fine-tuning them through hyperparameter optimization. `RandomizedSearchCV` was used to identify the best hyperparameters for each model. For evaluation, we split the dataset into training and testing sets, using metrics like accuracy, precision, recall, and F1-score to assess performance.
+
+The best-performing models achieved accuracies between 64% and 68%, showing the effectiveness of machine learning in sentiment classification for real-world business applications.
+
 ## Business Understanding
 In todays digital landscape,understanding customer feedback is a crucial step in maintaining brand reputation and enhancing customers reputation social media platforms like twitter provide an abundance of feedback where user express their opinions
 
